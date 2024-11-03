@@ -39,7 +39,7 @@ function Registration() {
   const onSubmit = (data) => {
     axios
       .post(
-        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth",
+        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/auth",
         data
       )
       .then((response) => {

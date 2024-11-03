@@ -23,7 +23,7 @@ function Login() {
 
     axios
       .post(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth/login`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/auth/login`,
         data
       )
       .then((response) => {

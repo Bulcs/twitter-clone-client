@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth/auth",
+        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/auth/auth",
         {
           headers: { accessToken: localStorage.getItem("accessToken") },
         }

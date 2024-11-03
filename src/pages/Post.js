@@ -14,7 +14,7 @@ function Post() {
   useEffect(() => {
     axios
       .get(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/byId/${id}`
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/posts/byId/${id}`
       )
       .then((response) => {
         setPost(response.data);
@@ -22,7 +22,7 @@ function Post() {
 
     axios
       .get(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//comments/${id}`
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/comments/${id}`
       )
       .then((response) => {
         setComments(response.data);
@@ -35,7 +35,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//comments`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/comments`,
         {
           commentBody: newComment,
           PostId: id,
@@ -65,7 +65,7 @@ function Post() {
   const deleteComment = (id) => {
     axios
       .delete(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//comments/${id}`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/comments/${id}`,
         {
           headers: {
             accessToken: localStorage.getItem("accessToken"),
@@ -86,7 +86,7 @@ function Post() {
   const deletePost = (id) => {
     axios
       .delete(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/${id}`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/posts/${id}`,
         {
           headers: {
             accessToken: localStorage.getItem("accessToken"),
@@ -104,7 +104,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Entrer new title");
       axios.put(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/edit-title`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/posts/edit-title`,
         {
           newTitle: newTitle,
           id: id,
@@ -121,7 +121,7 @@ function Post() {
       let newPostText = prompt("Entrer new post text");
 
       axios.put(
-        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/edit-post-text`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/posts/edit-post-text`,
         {
           newPostText: newPostText,
           id: id,

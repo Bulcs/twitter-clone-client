@@ -28,7 +28,7 @@ function CreatePost() {
   const onSubmit = (data) => {
     axios
       .post(
-        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts",
+        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com/posts",
         data,
         {
           headers: {
