@@ -1,38 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Montserrat';
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-container {
+  /* margin-left: 25%;
+  margin-right: 25%; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.bg-img{
+  height: 100vh;
+  position: relative;
+  /* top: 15%; */
+  margin: auto 20%;
+  filter: blur(80px);
+
+  animation: bgAnimation 6s infinite alternate;
+}
+
+@keyframes bgAnimation{
+  0% {
+    top: 0px; right: 0px;
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+    top: 50px; right: 40px;
+  }
+  100% {
+    top: 100px; right: 0px;
   }
 }
+
+
+
+.bg-img-div{
+  background-color: #121212;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
+.menu{
+  position: fixed;
+  z-index: 1000;
+  padding: 16px;
+  background-color: rgba( 18, 18, 18, 0.6 );
+  text-align: center;
+  border: 0 none transparent;
+  border-radius: 50px;
+  margin: 16px 0;
+  width: 50%;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+}
+.btn-menu{
+  color: white;
+  margin: 4px;
+  padding: 8px 50px;
+  background-color: transparent;
+  border: 2px none transparent;
+  border-radius: 24px;
+  text-decoration: none;
+}
+.btn-menu:hover{
+  background-color: rgb(38, 38, 46);
+}
+
+.logout-btn{
+  color: white;
+  margin: 4px;
+  padding: 8px 50px;
+  background-color: #EB383B;
+  border: 2px none transparent;
+  border-radius: 24px;
+  text-decoration: none;
+}
+
+.logout-btn:hover{
+  background-color: #C3222B;
+  cursor: pointer;
+}
+
+/* HOME - ALL POSTS */
+.all-posts{
+  margin-top: 12%;
+}
+
+.username-font-link{
+  text-decoration: none;
+}
+
+.username-font{
+  font-size: 20px;
+  margin: 12px 0;
+  font-weight: 600;
+  color: #fff;
+}
+
+.username-font:hover{
+  text-decoration: underline;
+}
+
+.post{
+  position: relative; 
+  background-color: rgba( 18, 18, 18, 0.88 );
+  margin-bottom: 16px;
+  padding: 12px 20px;
+  border-radius: 16px;
+  display: grid;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+}
+
+.user-info-post{
+  display: flex;
+}
+
+.body-post{
+  margin: 12px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.post-text{
+  margin: 0;
+  margin-top: 4px;
+}
+
+.footer-post{
+  text-align: right;
+}
+
+/* HOME - ALL POSTS */
+
+/* INDIVIDUAL POSTS */
+
+.individual-post-container{
+  margin-top: 12%;
+}
+
+.delete-post{
+  float: right;
+}
+
+/* COMMENTS */
+
+.listOfComments{
+  margin-top: 16px;
+}
+
+.bottom-side{
+  margin-top: 16px;
+}
+
+.addCommentContainer{
+  background-color: rgba( 18, 18, 18, 0.88 );
+  padding: 12px 20px;
+  border-radius: 16px;
+  padding: 12px;
+  display: grid;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+  position: relative;
+}
+
+.addCommentContainer > textarea{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid white;
+  height: 120px;
+
+  color: white;
+  background-color: transparent;
+  box-shadow: none;
+  margin-bottom: 16px;
+  resize: vertical;
+  overflow: auto;
+}
+
+.addCommentBtn{
+  position: relative;
+  left: 85%;
+  max-width: 124px;
+  color: white;
+  padding: 8px 20px;
+  background-color: rgb(38, 38, 46);
+  border: 2px none transparent;
+  border-radius: 24px;
+  text-decoration: none;
+}
+
+.deleteCommentBtn{
+    position: relative;
+    left: 85%;
+    max-width: 124px;
+    color: white;
+    padding: 8px 20px;
+    background-color: #EB383B;;
+    border: 2px none transparent;
+    border-radius: 24px;
+    text-decoration: none;
+}
+
+.addCommentBtn:hover{
+  background-color: rgb(58, 58, 66);
+}
+
+.deleteCommentBtn:hover{
+  background-color: #C3222B;;
+}
+
+.comment{
+  background-color: rgba( 18, 18, 18, 0.88 );
+  padding: 12px 20px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  display: grid;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+}
+
+/* COMMENTS */
+
+/* INDIVIDUAL POSTS */
+
+
+/* Profile Page */
+
+.profilePageContainer{
+  margin-top: 12%;
+}
+
+.basicInfo{
+  background-color: rgba( 18, 18, 18, 0.88 );
+  padding: 12px 20px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+}
+
+.footer-profile-comment{
+  text-align: right;
+}
+
+.btn-profile{
+  margin: 12px auto;
+  position: relative;
+  left: 60%;
+}
+
+.change-pass-btn{
+  position: relative;
+  margin-left: 8px;
+  color: white;
+  padding: 8px 20px;
+  background-color: rgb(38, 38, 46);
+  border: 2px none transparent;
+  border-radius: 24px;
+  text-decoration: none;
+}
+
+.change-pass-btn:hover{
+  background-color: rgb(58, 58, 66);
+}
+
+.btns-edit-profile{
+  display: flex;
+}
+
+.btn-cancel{
+  margin-left: 4px;
+
+  position: relative;
+  max-width: 124px;
+  color: white;
+  padding: 8px 20px;
+  background-color: rgb(38, 38, 46);
+  border: 2px none transparent;
+  border-radius: 24px;
+  text-decoration: none;
+}
+
+.btn-cancel:hover{
+  background-color: rgb(58, 58, 66);
+}
+
+.btn-edit-profile{
+  position: relative;
+  max-width: 160px;
+  color: white;
+  padding: 8px 20px;
+  background-color: rgb(38, 38, 46);
+  border: 2px none transparent;
+  border-radius: 24px;
+  text-decoration: none;
+}
+
+.btn-edit-profile:hover{
+  background-color: rgb(58, 58, 66);
+}
+
+.profile-picture-just-show{
+  width: 64px;
+  margin: 12px 0;
+  border-radius: 100%;
+}
+
+/* Profile Page */
+
+/* Create Post Page */
+
+.createPostPage{
+  margin-top: 12%;
+}
+
+.formContainer{
+  background-color: rgba( 18, 18, 18, 0.88 );
+  padding: 12px 20px;
+  border-radius: 16px;
+  margin-bottom: 12px;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+}
+
+#input-form-default{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid white;
+
+  color: white;
+  background-color: transparent;
+  box-shadow: none;
+  resize: vertical;
+  overflow: auto;
+}
+
+.textarea-post-text{
+  height: 100px;
+  min-height: 100px;
+  max-height: 100px;
+}
+
+.container-field{
+  margin-bottom: 16px !important;
+}
+
+.tweet-btn-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tweet-btn{
+    padding: 8px 20px;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #7F3BCD; 
+    transition: background-color 0.8s ease, transform 0.3s ease;
+}
+.tweet-btn:hover {
+  animation: colorChange 1s infinite alternate; 
+  transform: scale(1.06); 
+}
+
+.tweet-btn:active {
+  transform: translateY(0); 
+}
+
+#message-error{
+  color: red;
+  font-size: 12px;
+}
+
+@keyframes colorChange {
+  0% {
+      background-color: #7F3BCD; 
+  }
+  100% {
+      background-color: #526FEE; 
+  }
+}
+
+
+/* Create Post Page */
+
+
+/* Login */
+
+.login-content{
+  margin-top: 32vh;
+}
+
+.formContainerLog{
+  margin: auto auto;
+  vertical-align: center;
+  max-width: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 32px;
+
+  background-color: rgba( 18, 18, 18, 0.88 );
+  border-radius: 16px;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+}
+
+.formContainerLog > input{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid white;
+
+  color: white;
+  background-color: transparent;
+  box-shadow: none;
+  margin-bottom: 16px;
+  resize: vertical;
+  overflow: auto;
+}
+
+.login-btn-container{
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  position: relative;
+  color: white;
+  padding: 8px 20px;
+  background-color: rgb(38, 38, 46);
+  border: 2px none transparent;
+  border-radius: 24px;
+  text-decoration: none;
+  margin: 0 4px;
+}
+
+.btn{
+  padding: 8px 20px;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: #7F3BCD; 
+  transition: background-color 0.8s ease, transform 0.3s ease;
+}
+.btn:hover {
+animation: colorChange 1s infinite alternate; 
+transform: scale(1.06); 
+}
+
+.btn:active {
+transform: translateY(0); 
+}
+
+
+.go-to-register{
+  text-decoration: none;
+  color: white;
+}
+
+/* Login */
+
+
+/* Registration */
+
+.registration-content{
+  margin-top: 24vh;
+}
+
+.register-btn-container{
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-picture-container{
+  display: grid;
+}
+
+.profile-picture{
+  width: 64px;
+  margin: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.profile-picture:hover{
+  transform: scale(1.2); 
+}
+
+.profile-picture:active{
+  border: solid 2px #33cd76;
+}
+
+.profile-picture-active{
+  width: 64px;
+  margin: 12px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border-radius: 100%;
+  border: solid 4px #33cd76;
+}
+
+.profile-picture-field{
+  display: flex;
+  position: relative;
+  margin: 8px auto;
+}
+
+
+/* Registration */
+
+/* Edit Profile */
+
+.edit-profile-container{
+  margin-top: 12%;
+}
+
+.form-edit-profile-input{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+
+}
+
+.input-text-edit-profile{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid white;
+
+  color: white;
+  background-color: transparent;
+  box-shadow: none;
+  resize: vertical;
+  overflow: auto;
+}
+
+.btn-edit-profile-div{
+  position: relative;
+left: 80%;
+margin: 12px 0;
+}
+
+/* Edit Profile */
+
+
+/* Change Password */
+
+.change-password-container{
+  
+  margin: auto auto;
+  margin-top: 32vh;
+  vertical-align: center;
+  max-width: 50%;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 32px;
+
+  background-color: rgba( 18, 18, 18, 0.88 );
+  border-radius: 16px;
+
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.37);
+  backdrop-filter: blur( 10px );
+  -webkit-backdrop-filter: blur( 10px );
+}
+
+.form-change-password-container > input{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  border: 0;
+  border-bottom: 2px solid white;
+
+  color: white;
+  background-color: transparent;
+  box-shadow: none;
+  margin-bottom: 16px;
+  resize: vertical;
+  overflow: auto;
+}
+
+.form-change-password-container{
+  margin-top: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Change Password */
+
+
+/* 404 page */
+
+.not-found-container{
+  margin-top: 32vh;
+  text-align: center;
+}
+
+.error-icon{
+  font-size: 240px !important;
+}
+
+.h1-style-not-found{
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.redirect-font{
+  text-decoration: underline;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.redirect-font:hover{
+  transform: scale(1.3); 
+}
+
+/* 404 page */
