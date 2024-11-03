@@ -21,7 +21,9 @@ function Profile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/auth/profile-info/${id}`)
+      .get(
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth/profile-info/${id}`
+      )
       .then((response) => {
         setUser(response.data);
         setEmail(response.data.email);
@@ -29,9 +31,12 @@ function Profile() {
       });
 
     axios
-      .get(`http://localhost:3001/posts/by-user-id/${id}`, {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
+      .get(
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/by-user-id/${id}`,
+        {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        }
+      )
       .then((response) => {
         setListOfUserPosts(response.data);
       });
@@ -40,7 +45,7 @@ function Profile() {
   const _editProfile = () => {
     axios
       .put(
-        `http://localhost:3001/auth/edit-profile`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth/edit-profile`,
         {
           newBioText: bioText,
           newEmail: email,

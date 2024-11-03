@@ -29,9 +29,12 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/auth/auth", {
-        headers: { accessToken: localStorage.getItem("accessToken") },
-      })
+      .get(
+        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth/auth",
+        {
+          headers: { accessToken: localStorage.getItem("accessToken") },
+        }
+      )
       .then((response) => {
         if (response.data.error) {
           setAuthState({ ...authState, status: false });

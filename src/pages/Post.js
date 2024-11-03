@@ -12,12 +12,18 @@ function Post() {
   const history = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
-      setPost(response.data);
-    });
+    axios
+      .get(
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/byId/${id}`
+      )
+      .then((response) => {
+        setPost(response.data);
+      });
 
     axios
-      .get(`http://localhost:3001/comments/${id}`)
+      .get(
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//comments/${id}`
+      )
       .then((response) => {
         setComments(response.data);
       })
@@ -29,7 +35,7 @@ function Post() {
   const addComment = () => {
     axios
       .post(
-        `http://localhost:3001/comments`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//comments`,
         {
           commentBody: newComment,
           PostId: id,
@@ -58,11 +64,14 @@ function Post() {
 
   const deleteComment = (id) => {
     axios
-      .delete(`http://localhost:3001/comments/${id}`, {
-        headers: {
-          accessToken: localStorage.getItem("accessToken"),
-        },
-      })
+      .delete(
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//comments/${id}`,
+        {
+          headers: {
+            accessToken: localStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
         //OPTIMISTIC REFRESH
         alert("Comment deleted successfully");
@@ -76,11 +85,14 @@ function Post() {
 
   const deletePost = (id) => {
     axios
-      .delete(`http://localhost:3001/posts/${id}`, {
-        headers: {
-          accessToken: localStorage.getItem("accessToken"),
-        },
-      })
+      .delete(
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/${id}`,
+        {
+          headers: {
+            accessToken: localStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
         //OPTIMISTIC REFRESH
         alert("Comment deleted successfully");
@@ -92,7 +104,7 @@ function Post() {
     if (option === "title") {
       let newTitle = prompt("Entrer new title");
       axios.put(
-        `http://localhost:3001/posts/edit-title`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/edit-title`,
         {
           newTitle: newTitle,
           id: id,
@@ -109,7 +121,7 @@ function Post() {
       let newPostText = prompt("Entrer new post text");
 
       axios.put(
-        `http://localhost:3001/posts/edit-post-text`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts/edit-post-text`,
         {
           newPostText: newPostText,
           id: id,

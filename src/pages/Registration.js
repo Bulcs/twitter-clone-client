@@ -37,9 +37,14 @@ function Registration() {
   });
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/auth", data).then((response) => {
-      history("/login");
-    });
+    axios
+      .post(
+        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth",
+        data
+      )
+      .then((response) => {
+        history("/login");
+      });
   };
 
   const allNotSelected = (index) => {

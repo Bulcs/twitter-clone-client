@@ -21,20 +21,25 @@ function Login() {
       password: password,
     };
 
-    axios.post(`http://localhost:3001/auth/login`, data).then((response) => {
-      console.log(response.data.error);
-      if (response.data.error) {
-        alert(response.data.error);
-      } else {
-        localStorage.setItem("accessToken", response.data.token);
-        setAuthState({
-          username: response.data.username,
-          id: response.data.id,
-          status: true,
-        });
-        history("/");
-      }
-    });
+    axios
+      .post(
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth/login`,
+        data
+      )
+      .then((response) => {
+        console.log(response.data.error);
+        if (response.data.error) {
+          alert(response.data.error);
+        } else {
+          localStorage.setItem("accessToken", response.data.token);
+          setAuthState({
+            username: response.data.username,
+            id: response.data.id,
+            status: true,
+          });
+          history("/");
+        }
+      });
   };
 
   return (

@@ -17,7 +17,7 @@ function ChangePassword() {
   const changePassword = () => {
     axios
       .put(
-        "http://localhost:3001/auth/change-password",
+        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//auth/change-password",
         {
           oldPassword: oldPassword,
           newPassword: newPassword,

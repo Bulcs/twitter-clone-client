@@ -27,11 +27,15 @@ function CreatePost() {
 
   const onSubmit = (data) => {
     axios
-      .post("http://localhost:3001/posts", data, {
-        headers: {
-          accessToken: localStorage.getItem("accessToken"),
-        },
-      })
+      .post(
+        "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts",
+        data,
+        {
+          headers: {
+            accessToken: localStorage.getItem("accessToken"),
+          },
+        }
+      )
       .then((response) => {
         if (response.data.error) {
           console.log(response.data.error);

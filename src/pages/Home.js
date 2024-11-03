@@ -15,11 +15,14 @@ function Home() {
       history("/login");
     } else {
       axios
-        .get("http://localhost:3001/posts", {
-          headers: {
-            accessToken: localStorage.getItem("accessToken"),
-          },
-        })
+        .get(
+          "https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//posts",
+          {
+            headers: {
+              accessToken: localStorage.getItem("accessToken"),
+            },
+          }
+        )
         .then((response) => {
           setListOfPosts(response.data.listOfPosts);
           setLikedPosts(
@@ -36,7 +39,7 @@ function Home() {
   const likePost = (id) => {
     axios
       .post(
-        `http://localhost:3001/like`,
+        `https://twitter-clone-api-vini-b52fcd914831.herokuapp.com//like`,
         { PostId: id },
         {
           headers: {
